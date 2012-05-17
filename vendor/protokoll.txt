@@ -1,0 +1,4 @@
+rails generate rspec:install
+http://radiant-mist-8256.herokuapp.com/ | git@heroku.com:radiant-mist-8256.git
+Git remote heroku added
+git checkout -b static-pages
