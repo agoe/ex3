@@ -5,3 +5,27 @@ git checkout -b static-pages
 
 rails generate controller Users new --no-test-framework
  rails generate integration_test user_pages
+ gem 'annotate', '~> 2.4.1.beta'
+ bundle exec annotate --position before
+ 
+rails console --sandbox
+
+bundle exec rake db:test:prepare
+
+user.valid?
+user.errors.full_messages
+
+rails generate migration add_index_to_users_email
+
+class AddIndexToUsersEmail < ActiveRecord::Migration
+  def change
+    add_index :users, :email, unique: true
+  end
+end
+class User
+  before_save { |user| user.email = email.downcase }
+  https://github.com/insoshi/insoshi/blob/master/app/controllers/people_controller.rb
+  
+  gem 'bcrypt-ruby', '3.0.1'
+
+
