@@ -27,5 +27,27 @@ class User
   https://github.com/insoshi/insoshi/blob/master/app/controllers/people_controller.rb
   
   gem 'bcrypt-ruby', '3.0.1'
+  rails generate migration add_password_digest_to_users password_digest:string
+  
+    <%= debug(params) if Rails.env.development? %>
+   
+   $ rails server --environment production
+   $ bundle exec rake db:migrate RAILS_ENV=production
+   $ bundle exec rake db:migrate RAILS_ENV=production
+   
+   gem "factory_girl_rails", "~> 3.0"
+   
+   config/environments/test.rb
+   # Speed up tests by lowering BCrypt's cost function.
+  require 'bcrypt'
+  silence_warnings do
+    BCrypt::Engine::DEFAULT_COST = BCrypt::Engine::MIN_COST
+  end
+  
+  app/helpers/users_helper.rb :
+   def gravatar_for(user) ...
 
+bundle exec rake db:test:prepare
+# nur signup tests :
+bundle exec rspec spec/requests/user_pages_spec.rb -e "signup page"
 
