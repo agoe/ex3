@@ -46,8 +46,11 @@ class User
   
   app/helpers/users_helper.rb :
    def gravatar_for(user) ...
-
+   
+rake db:reset
 bundle exec rake db:test:prepare
 # nur signup tests :
 bundle exec rspec spec/requests/user_pages_spec.rb -e "signup page"
 
+config produktion
+config.force_ssl = true
