@@ -54,3 +54,6 @@ bundle exec rspec spec/requests/user_pages_spec.rb -e "signup page"
 
 config produktion
 config.force_ssl = true
+
+heroku run rake db:migrate
+heroku open
