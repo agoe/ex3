@@ -56,4 +56,14 @@ config produktion
 config.force_ssl = true
 
 heroku run rake db:migrate
+
+rails generate controller Sessions --no-test-framework
+rails generate integration_test authentication_pages
 heroku open
+
+rails generate migration add_remember_token_to_users
+
+sessionsHelper
+def current_user=(user)
+    @current_user = user
+end
